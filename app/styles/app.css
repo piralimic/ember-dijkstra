@@ -1,0 +1,9 @@
+.has-background-bicolor-light {
+    background: linear-gradient(182deg, #dce3e3 50%, #fff 50%);
+    min-height: 50px;
+}
+
+.has-background-bicolor-dark {
+    background: linear-gradient(176deg, #2f3441 50%, #212531 50%);
+    min-height: 100px;
+}
