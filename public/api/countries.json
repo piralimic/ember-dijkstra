@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "type": "countries",
+      "id": "be",
+      "attributes": {
+        "name": "Belgium",
+        "cities": ["Brussels", "Liege"],
+        "ways": [
+          {
+            "id": 1,
+            "city_from": "Brussels",
+            "city_to": "Liege",
+            "distance": 97
+          }
+        ]
+      }
+    },
+    {
+      "type": "countries",
+      "id": "ch",
+      "attributes": {
+        "name": "Switzerland",
+        "cities": ["Bern", "Fribourg"],
+        "ways": [
+          {
+            "id": 1,
+            "city_from": "Bern",
+            "city_to": "Fribourg",
+            "distance": 33
+          }
+        ]
+      }
+    },
+    {
+      "type": "countries",
+      "id": "fr",
+      "attributes": {
+        "name": "France",
+        "cities": ["Paris", "Lille"],
+        "ways": [
+          {
+            "id": 1,
+            "city_from": "Paris",
+            "city_to": "Lille",
+            "distance": 225
+          }
+        ]
+      }
+    }
+  ]
+}
