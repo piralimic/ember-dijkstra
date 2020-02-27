@@ -1,0 +1,16 @@
+<!-- <Country::Detailed @country={{@model}} /> -->
+
+{{@model.name}}
+<br><br>
+{{@model.cities}} length : {{@model.cities.length}}
+<ul>
+{{#each @model.cities as |city|}}
+ <li>{{city.name}}</li>
+{{/each}}
+</ul>
+
+<ul>
+{{#each @model.country.cities as |city|}}
+ <li>{{city.name}}ok</li>
+{{/each}}
+</ul>

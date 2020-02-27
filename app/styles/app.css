@@ -1,3 +1,7 @@
+html {
+    background: #2f3441;
+}
+
 .has-background-bicolor-light {
     background: linear-gradient(182deg, #dce3e3 50%, #fff 50%);
     min-height: 50px;
