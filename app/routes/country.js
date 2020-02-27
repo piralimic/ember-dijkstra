@@ -5,7 +5,8 @@ export default class CountryRoute extends Route {
   @service store;
   async model(params) {
     return this.store.findRecord('country', params.country_id, {
-      include: 'cities'
+      reload: true,
+      backgroundReload: false
     });
   }
 }
