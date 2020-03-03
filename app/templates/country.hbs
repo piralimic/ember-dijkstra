@@ -1,11 +1,1 @@
-<!-- <Country::Detailed @country={{@model}} /> -->
-
-{{@model.name}}
-<br><br>
-List of {{@model.cities.length}} cities
-<br><br>
-<ul>
-{{#each @model.cities as |city|}}
- <li>{{city.name}}</li>
-{{/each}}
-</ul>
+<Country::Detailed @country={{@model}} />

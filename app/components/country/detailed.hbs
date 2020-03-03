@@ -6,23 +6,7 @@
       From :
     </div>
     <div>
-      <div class="control has-icons-left">
-        <div class="select">
-          <select name="city_from" id="city_from"><option value="33">Bruges</option>
-<option value="34">Antwerp</option>
-<option value="35">Ghent</option>
-<option value="36">Mechelen</option>
-<option value="37">Brussels</option>
-<option value="38">Mons</option>
-<option value="39">Namur</option>
-<option value="40">Liege</option>
-<option value="41">Arlon</option>
-<option value="42">Tournai</option></select>
-        </div>
-        <span class="icon is-left">
-          <i class="fas fa-globe"></i>
-        </span>
-      </div>
+      <Country::SelectCities @direction="city_from" @cities={{@country.cities}} />
     </div>
   </div>
   <div class="column">
@@ -30,23 +14,7 @@
       To :
     </div>
     <div>
-      <div class="control has-icons-left">
-        <div class="select">
-          <select name="city_to" id="city_to"><option value="33">Bruges</option>
-<option value="34">Antwerp</option>
-<option value="35">Ghent</option>
-<option value="36">Mechelen</option>
-<option value="37">Brussels</option>
-<option value="38">Mons</option>
-<option value="39">Namur</option>
-<option value="40">Liege</option>
-<option value="41">Arlon</option>
-<option value="42">Tournai</option></select>
-        </div>
-        <span class="icon is-left">
-          <i class="fas fa-globe"></i>
-        </span>
-      </div>
+      <Country::SelectCities @direction="city_to" @cities={{@country.cities}} />
     </div>
   </div>
   <div class="column">
@@ -58,12 +26,6 @@
     </div>
   </div>
 </div>
-TEST
-<ul>
-{{#each @country.cities as |city|}}
- <li>{{city.name}}ok</li>
-{{/each}}
-</ul>
 <hr>
 <p>
   <LinkTo @route="index" class="button is-link is-light">Choose another country</LinkTo>
