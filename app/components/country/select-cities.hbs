@@ -1,0 +1,12 @@
+<div class="control has-icons-left">
+  <div class="select">
+    <select name={{@direction}} id={{@direction}}>
+      {{#each @cities as |city|}}
+        <option value={{city.id}}>{{city.name}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <span class="icon is-left">
+    <i class="fas fa-globe"></i>
+  </span>
+</div>
