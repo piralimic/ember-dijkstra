@@ -1,6 +1,7 @@
 <h2 class="subtitle is-uppercase is-italic">{{@country.name}}</h2>
 
 <form {{on "submit" this.onFormSubmit}}>
+<Input id="country_id" @type="hidden" @value={{@country.id}} />
 <div class="columns">
   <div class="column">
     <div>
