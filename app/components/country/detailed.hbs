@@ -1,12 +1,18 @@
 <h2 class="subtitle is-uppercase is-italic">{{@country.name}}</h2>
 
+<form {{on "submit" this.onFormSubmit}}>
 <div class="columns">
   <div class="column">
     <div>
       From :
     </div>
     <div>
-      <Country::SelectCities @direction="city_from" @cities={{@country.cities}} />
+      <Country::SelectCities
+        @cities={{@country.cities}}
+        @selected={{this.city_from}}
+        @direction="city_from"
+        @onSelectChanged={{this.setCity}}
+      />
     </div>
   </div>
   <div class="column">
@@ -14,7 +20,12 @@
       To :
     </div>
     <div>
-      <Country::SelectCities @direction="city_to" @cities={{@country.cities}} />
+      <Country::SelectCities
+        @cities={{@country.cities}}
+        @selected={{this.city_to}}
+        @direction="city_to"
+        @onSelectChanged={{this.setCity}}
+      />
     </div>
   </div>
   <div class="column">
@@ -22,10 +33,13 @@
       &nbsp;
     </div>
     <div>
+    <
+    <!-- @click={{action onExecute city_from city_to }} {{action findShortPath “Liege” “Bruges”}} -->
       <input type="submit" name="commit" value="Execute" class="button is-link" data-disable-with="Execute">
     </div>
   </div>
 </div>
+</form>
 <hr>
 <p>
   <LinkTo @route="index" class="button is-link is-light">Choose another country</LinkTo>
