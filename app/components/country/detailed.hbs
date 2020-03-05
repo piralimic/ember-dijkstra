@@ -1,7 +1,6 @@
 <h2 class="subtitle is-uppercase is-italic">{{@country.name}}</h2>
 
 <form {{on "submit" this.onFormSubmit}}>
-<Input id="country_id" @type="hidden" @value={{@country.id}} />
 <div class="columns">
   <div class="column">
     <div>
@@ -45,3 +44,13 @@
 <p>
   <LinkTo @route="index" class="button is-link is-light">Choose another country</LinkTo>
 </p>
+
+{{#if this.path}}
+  <Country::Result
+    @distance={{this.distance}}
+    @path={{this.path}}
+    @start={{this.start_city}}
+    @end={{this.end_city}}
+  />
+{{/if}}
+

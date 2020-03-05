@@ -2,19 +2,17 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
-import fetch from 'fetch';
 
 export default class DetailedComponent extends Component {
   @service store;
 
+  @tracked city_list
   @tracked city_from
   @tracked city_to
-
-  printStartEndCities(city_from_id, city_to_id) {
-    console.log('Form submission params')
-    console.log('city_from : ', parseInt(city_from_id));
-    console.log('city_to : ', parseInt(city_to_id));
-  }
+  @tracked path
+  @tracked distance
+  @tracked start_city
+  @tracked end_city
 
   /**
   *
@@ -29,24 +27,21 @@ export default class DetailedComponent extends Component {
     // prevent the reloading page on form submit
     evt.preventDefault();
 
-    this.printStartEndCities(city_from_id, city_to_id);
-    console.log("country_id : ", parseInt(country_id.value));
-    const newResult = this.store.createRecord('result', { country_id: country_id.value, start_city: city_from_id, end_city: city_to_id});
-    // newResult.save();
-    const response = await fetch(`http://localhost:3000/api/v1/countries/${country_id.value}/results/?city_from=${city_from_id}&city_to=${city_to_id}`, { method: 'POST'});
-    return response.json();
+    const newResult = this.store.createRecord('result', { countryId: this.args.country.id, startCity: city_from_id, endCity: city_to_id});
+    newResult.save().then(result => {
+      this.path = result.path;
+      this.distance = result.distance;
+      this.start_city = result.startCity;
+      this.end_city = result.endCity;
+    });
   }
 
   @action
-  setCity(direction, city) {
+  setCity(direction) {
     if (direction == "city_to") {
       this.city_to = parseInt(event.target.selectedOptions[0].value);
-      console.log('Selection update')
-      console.log('City to : ', this.city_to);
     } else {
       this.city_from = parseInt(event.target.selectedOptions[0].value);
-      console.log('Selection update')
-      console.log('City from : ', this.city_from);
     }
   }
 }

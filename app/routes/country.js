@@ -9,8 +9,5 @@ export default class CountryRoute extends Route {
       backgroundReload: false
     });
   }
-    // ${params.rental_id}
-    // http://localhost:3000/api/v1/countries/1/results/?city_from=8&city_to=1
-
 
 }
