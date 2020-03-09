@@ -4,10 +4,9 @@ import { inject as service } from '@ember/service';
 export default class CountryRoute extends Route {
   @service store;
   async model(params) {
-    return this.store.findRecord('country', params.country_id, {
+    return this.store.findRecord('country', params.id, {
       reload: true,
       backgroundReload: false
     });
   }
-
 }
